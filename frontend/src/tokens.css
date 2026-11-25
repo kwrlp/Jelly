@@ -1,0 +1,33 @@
+/* =========================================================================
+   ДИЗАЙН-ТОКЕНЫ v0.12 — тёмный минимализм
+   Один тёмный режим + один акцентный цвет на выбор в профиле (атрибут <html data-theme>):
+     purple (по умолчанию) · blue · green
+   Поверхности плоские: без размытия, стекла, свечения и градиентов. Акцент — только в «цветных вставках»:
+   главные кнопки, активные вкладки, значки, прогресс, ползунки, ссылки.
+   ========================================================================= */
+:root {
+  /* поверхности и линии (одинаковы для всех акцентов) */
+  --bg: #0d0d0e; --surface: #151516; --surface-2: #1c1c1e; --surface-3: #252527; --overlay: rgba(0, 0, 0, .62);
+  --line: #28282b; --line-strong: #3a3a3e;
+  --txt1: #f2f2f3; --txt2: #a3a3a8; --txt3: #6f6f75;
+  --danger: #e5675f; --ok: #5fbf8f; --warn: #d9a85a; --staff-color: #d9a85a;
+
+  /* акцент по умолчанию — фиолетовый */
+  --accent: #a58bfa; --accent-ink: #c2b2fc; --accent-soft: rgba(165, 139, 250, .14); --accent-ring: rgba(165, 139, 250, .35); --on-accent: #0d0d0e;
+
+  /* шрифт, размеры, отступы, скругления, анимация */
+  --font: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fs-xs: .75rem; --fs-sm: .875rem; --fs-md: 1rem; --fs-lg: 1.125rem; --fs-xl: 1.5rem; --fs-2xl: 2rem;
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 40px;
+  --r-sm: 10px; --r-md: 14px; --r-lg: 20px; --r-pill: 999px;
+  --t-fast: 120ms; --t-med: 200ms; --ease: cubic-bezier(.2, .7, .2, 1);
+
+  /* маскот */
+  --jelly-fill: #2a2a2d; --jelly-dot: var(--accent);
+}
+[data-theme="purple"] { --accent: #a58bfa; --accent-ink: #c2b2fc; --accent-soft: rgba(165, 139, 250, .14); --accent-ring: rgba(165, 139, 250, .35); }
+[data-theme="blue"]   { --accent: #6c9cff; --accent-ink: #9dbbff; --accent-soft: rgba(108, 156, 255, .14); --accent-ring: rgba(108, 156, 255, .35); }
+[data-theme="green"]  { --accent: #5fc29a; --accent-ink: #8fd9b8; --accent-soft: rgba(95, 194, 154, .14); --accent-ring: rgba(95, 194, 154, .35); }
+
+/* алиасы прежних имён (на них ссылаются отдельные места в JSX) */
+:root { --primary: var(--accent); --primary-ink: var(--accent-ink); --on-primary: var(--on-accent); --secondary: var(--surface-3); --brd: var(--line); }
